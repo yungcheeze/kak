@@ -1,3 +1,6 @@
+
+colorscheme lucius
+
 # Avoid escape key
 map -docstring "avoid escape key" global normal '<c-g>' ';<space>'
 map -docstring "avoid escape key" global prompt '<c-g>' '<esc>'
