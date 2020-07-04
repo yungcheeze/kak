@@ -11,6 +11,12 @@ plug "ul/kak-lsp" do %{
             map global spacekak <a-l> ':enter-user-mode<space>lsp<ret>'
     }
 }
+
+plug alexherbo2/auto-pairs.kak config %{
+  hook global WinCreate .* %{
+    auto-pairs-enable
+  }
+}
 plug "andreyorst/smarttab.kak" config %{
 
     hook global WinCreate .* %{ try %{
