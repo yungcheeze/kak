@@ -150,3 +150,37 @@ map -docstring "paste from system clipboard before cursor"  global spacekak-yank
 map -docstring "paste from system clipboard after cursor"   global spacekak-yank 'p' '<a-!>xsel --output --clipboard<ret>'
 map -docstring "replace selection with system clipboard"    global spacekak-yank 'R' '|xsel --output --clipboard<ret>'
 
+declare-user-mode spacekak-toggles
+map global spacekak t ':enter-user-mode<space>spacekak-toggles<ret>' -docstring 'toggles'
+
+map global spacekak-toggles d ':git<space>show-diff<ret>' -docstring 'git diff'
+
+declare-user-mode spacekak-comment
+map global spacekak c ':enter-user-mode<space>spacekak-comment<ret>' -docstring 'comment'
+
+map global spacekak-comment c ':comment-line<ret>' -docstring 'line'
+map global spacekak-comment b ':comment-block<ret>' -docstring 'block'
+map global spacekak-comment y 'y:comment-line<ret>' -docstring 'line (and yank)'
+
+declare-user-mode spacekak-insert
+map global spacekak i ':enter-user-mode<space>spacekak-insert<ret>' -docstring 'insert'
+
+map global spacekak-insert O 'O<esc>j' -docstring 'line'
+map global spacekak-insert o 'o<esc>k' -docstring 'line'
+
+
+declare-user-mode spacekak-easymotion
+map global spacekak e ':enter-user-mode<space>spacekak-easymotion<ret>' -docstring 'easymotion'
+
+map global spacekak-easymotion e ':easy-motion-char<ret>' -docstring 'char ->'
+map global spacekak-easymotion c ':easy-motion-char<ret>' -docstring 'char ->'
+map global spacekak-easymotion w ':easy-motion-w<ret>' -docstring 'word ->'
+map global spacekak-easymotion W ':easy-motion-W<ret>' -docstring 'WORD ->'
+map global spacekak-easymotion j ':easy-motion-j<ret>' -docstring 'line <-'
+map global spacekak-easymotion k ':easy-motion-k<ret>' -docstring 'line ->'
+map global spacekak-easymotion f ':easy-motion-f<ret>' -docstring 'char ->'
+map global spacekak-easymotion <a-f> ':easy-motion-alt-f<ret>' -docstring 'char <-'
+map global spacekak-easymotion b ':easy-motion-b<ret>' -docstring 'word <-'
+map global spacekak-easymotion B ':easy-motion-B<ret>' -docstring 'WORD <-'
+map global spacekak-easymotion s ':easy-motion-on-regex<ret>' -docstring 'regex'
+map global spacekak-easymotion / ':easy-motion-on-regex<ret>' -docstring 'regex'
