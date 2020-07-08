@@ -83,6 +83,14 @@ map global insert '<c-n>' '<down>'
 map global insert '<c-p>' '<up>'
 map global insert '<c-f>' '<right>'
 map global insert '<c-b>' '<left>'
+map global insert '<c-a>' '<a-;>gh'      -docstring "move the cursor to the start of the line"
+map global insert '<c-e>' '<esc>glli'    -docstring "move the cursor to the end of the line"
+map global insert '<c-d>' '<a-;>c'       -docstring "delete the character under the anchor"
+map global insert '<c-u>' '<esc>h<a-h>c' -docstring "delete from the cursor to the start of the line"
+map global insert '<c-k>' '<esc><a-l>c'  -docstring "delete from the cursor to the end of the line"
+map global insert '<a-d>' '<esc>ec'      -docstring "delete until the next word boundary"
+map global insert '<c-w>' '<esc>bc'      -docstring "delete until the previous word boundary"
+map global insert '<c-y>' '<esc>Pi'      -docstring "paste before the cursor"
 
 map global insert '<a-x>' ':'
 map global normal '<a-x>' ':'
