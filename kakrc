@@ -117,6 +117,7 @@ map global spacekak f ':enter-user-mode<space>spacekak-files<ret>' -docstring 'f
 
 map global spacekak-files s ':w<ret>' -docstring 'save file'
 map global spacekak-files f ':file<space>' -docstring 'find file'
+map global spacekak-files t ':set-option<space>current<space>filetype<space>' -docstring 'find file'
 
 declare-user-mode spacekak-quit
 map global spacekak q ':enter-user-mode<space>spacekak-quit<ret>' -docstring 'quit'
