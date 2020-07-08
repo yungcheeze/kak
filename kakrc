@@ -40,7 +40,7 @@ plug "alexherbo2/split-object.kak" config %{
 
 source "%val{config}/private/commands.kak"
 source "%val{config}/private/recentf.kak"
-
+source "%val{config}/private/formatters.kak"
 colorscheme lucius
 
 # editor stuff
