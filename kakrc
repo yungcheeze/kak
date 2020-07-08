@@ -50,6 +50,11 @@ colorscheme lucius
 # editor stuff
 hook global WinCreate .* %{ try %{
     add-highlighter buffer/show-whitespaces show-whitespaces -lf ' ' -spc ' ' -nbsp '⋅'
+    git show-diff
+}}
+
+hook global BufWritePost .* %{ try %{
+    git show-diff
 }}
 
 # LSP
