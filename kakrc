@@ -1,9 +1,11 @@
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+
 plug "delapouite/kakoune-text-objects"
+
 plug "ul/kak-lsp" do %{
         cargo install --locked --force --path .
 } subset %{
-
 } config %{
     eval %sh{kak-lsp --kakoune -s $kak_session}
     hook global WinSetOption filetype=(python|c|cpp) %{
@@ -17,8 +19,8 @@ plug alexherbo2/auto-pairs.kak config %{
     auto-pairs-enable
   }
 }
-plug "andreyorst/smarttab.kak" config %{
 
+plug "andreyorst/smarttab.kak" config %{
     hook global WinCreate .* %{ try %{
         expandtab
         set-option window softtabstop 2
@@ -30,10 +32,13 @@ plug "andreyorst/smarttab.kak" config %{
         set-option window indentwidth 4
     }
 }
+
 plug "alexherbo2/auto-pairs.kak" %{
         hook global WinCreate .* auto-pairs-enable
 }
+
 plug "occivink/kakoune-vertical-selection"
+
 plug "alexherbo2/split-object.kak" config %{
       map -docstring "split object" global normal '<a-I>' ': enter-user-mode split-object<ret>'
 }
@@ -45,30 +50,8 @@ plug "danr/kakoune-easymotion" config %{
 source "%val{config}/private/commands.kak"
 source "%val{config}/private/recentf.kak"
 source "%val{config}/private/formatters.kak"
+source "%val{config}/private/filetypes.kak"
 source "%val{config}/private/bindings.kak"
+source "%val{config}/private/misc.kak"
+
 colorscheme lucius
-
-# editor stuff
-hook global WinCreate .* %{ try %{
-    add-highlighter buffer/show-whitespaces show-whitespaces -lf ' ' -spc ' ' -nbsp '⋅'
-    git show-diff
-}}
-
-hook global BufWritePost .* %{ try %{
-    git show-diff
-}}
-
-# remove trailing whitespace on save
-hook global BufWritePre .* %{ try %{ execute-keys -draft \%s\h+$<ret>d } }
-
-#show trailing whitespace
-define-command -hidden show-trailing-whitespaces %{ try %{ add-highlighter global/trailing-whitespaces regex '\h+$' 0:default,red } }
-define-command -hidden hide-trailing-whitespaces %{ try %{ remove-highlighter global/trailing-whitespaces } }
-hook global WinDisplay .*              show-trailing-whitespaces
-hook global ModeChange 'insert:normal' show-trailing-whitespaces
-hook global ModeChange 'normal:insert' hide-trailing-whitespaces
-
-hook global BufCreate .*(zshenv|zprofile|zshrc|direnvrc|envrc|\benv) %{
-    set-option buffer filetype sh
-}
-
