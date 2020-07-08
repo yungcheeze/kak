@@ -57,6 +57,10 @@ hook global BufWritePost .* %{ try %{
     git show-diff
 }}
 
+hook global BufCreate .*(zshenv|zprofile|zshrc|direnvrc|envrc|\benv) %{
+    set-option buffer filetype sh
+}
+
 # LSP
 # Avoid escape key
 map -docstring "avoid escape key" global normal '<c-g>' ';<space>'
