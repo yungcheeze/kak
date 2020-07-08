@@ -97,16 +97,10 @@ map global normal '<a-x>' ':'
 
 hook global InsertCompletionShow .* %{ try %{
     execute-keys -draft 'h<a-K>\h<ret>'
-    map window insert <tab> <c-n>
-    map window insert <s-tab> <c-p>
-    map window insert <c-g> <c-o>
     unmap global insert '<c-n>' '<down>'
     unmap global insert '<c-p>' '<up>'
 }}
 hook global InsertCompletionHide .* %{
-    unmap window insert <tab> <c-n>
-    unmap window insert <s-tab> <c-p>
-    unmap window insert <c-g> <c-o>
     map global insert '<c-n>' '<down>'
     map global insert '<c-p>' '<up>'
 }
