@@ -38,6 +38,10 @@ plug "alexherbo2/split-object.kak" config %{
       map -docstring "split object" global normal '<a-I>' ': enter-user-mode split-object<ret>'
 }
 
+plug "danr/kakoune-easymotion" config %{
+    set-option global em_jumpchars asdfghjkl
+}
+
 source "%val{config}/private/commands.kak"
 source "%val{config}/private/recentf.kak"
 source "%val{config}/private/formatters.kak"
