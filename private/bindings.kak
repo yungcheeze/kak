@@ -64,6 +64,7 @@ map global spacekak-buffers b ':buffer<space>' -docstring 'change'
 map global spacekak-buffers d ':delete-buffer<ret>' -docstring 'delete'
 map global spacekak-buffers n ':buffer-next<ret>' -docstring 'next'
 map global spacekak-buffers p ':buffer-previous<ret>' -docstring 'previous'
+map global spacekak-buffers f ':format<ret>' -docstring 'format buffer'
 
 declare-user-mode spacekak-windows
 map global spacekak w ':enter-user-mode<space>spacekak-windows<ret>' -docstring 'windows'
