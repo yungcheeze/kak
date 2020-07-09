@@ -6,4 +6,4 @@ source "%val{config}/private/filetypes.kak"
 source "%val{config}/private/bindings.kak"
 source "%val{config}/private/misc.kak"
 
-colorscheme lucius
+colorscheme nord
