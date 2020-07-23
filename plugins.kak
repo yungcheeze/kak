@@ -71,3 +71,13 @@ plug "occivink/kakoune-snippets" config %{
 plug "delapouite/kakoune-mirror" config %{
     map global mirror <space> 'a<space><esc>i<space><esc>H<a-;>'  -docstring '·surround·'
 }
+
+plug "lePerdu/kakboard" config %{
+    hook global WinCreate .* %{ kakboard-enable }
+    hook global WinSetOption kakboard_enabled=true %{
+        map global insert '<c-y>'           '<esc>:kakboard-with-pull-clipboard P<ret>i'      -docstring "paste before the cursor"
+    }
+    hook global WinSetOption kakboard_enabled=false %{
+        map global insert '<c-y>'           '<esc>Pi'      -docstring "paste before the cursor"
+    }
+}
