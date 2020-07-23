@@ -99,3 +99,7 @@ plug "andreyorst/tagbar.kak" defer "tagbar" %{
 plug "dgmulf/local-kakrc.git" config %{
     set-option global source_local_kakrc true
 }
+
+plug "jbomanson/search-doc.kak" config %{
+    require-module search-doc
+}
