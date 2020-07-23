@@ -8,7 +8,7 @@ plug "ul/kak-lsp" do %{
 } subset %{
 } config %{
     eval %sh{kak-lsp --kakoune -s $kak_session}
-    hook global WinSetOption filetype=(python|c|cpp) %{
+    hook global WinSetOption filetype=(python|c|cpp|sh) %{
             lsp-enable-window
             map global spacekak <a-l> ':enter-user-mode<space>lsp<ret>'
     }
