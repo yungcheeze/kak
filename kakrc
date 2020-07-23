@@ -7,3 +7,4 @@ source "%val{config}/private/bindings.kak"
 source "%val{config}/private/misc.kak"
 
 colorscheme nord
+set-option global grepcmd 'rg --column --with-filename'
