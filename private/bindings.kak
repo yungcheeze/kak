@@ -116,3 +116,12 @@ map global spacekak-easymotion b ':easy-motion-b<ret>' -docstring 'word <-'
 map global spacekak-easymotion B ':easy-motion-B<ret>' -docstring 'WORD <-'
 map global spacekak-easymotion s ':easy-motion-on-regex<ret>' -docstring 'regex'
 map global spacekak-easymotion / ':easy-motion-on-regex<ret>' -docstring 'regex'
+
+declare-user-mode spacekak-phantom-sel
+map global spacekak p ':enter-user-mode<space>spacekak-phantom-sel<ret>' -docstring 'phantom selections'
+
+map global spacekak-phantom-sel c ':phantom-selection-add-selection<ret>' -docstring 'add'
+map global spacekak-phantom-sel a ':phantom-selection-select-all<ret>' -docstring 'add'
+map global spacekak-phantom-sel d ':phantom-selection-clear<ret>' -docstring 'clear'
+map global spacekak-phantom-sel n ':phantom-selection-iterate-next<ret>' -docstring 'next'
+map global spacekak-phantom-sel p ':phantom-selection-iterate-prev<ret>' -docstring 'prev'
