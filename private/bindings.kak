@@ -100,6 +100,8 @@ map global spacekak i ':enter-user-mode<space>spacekak-insert<ret>' -docstring '
 map global spacekak-insert O 'O<esc>j' -docstring 'line'
 map global spacekak-insert o 'o<esc>k' -docstring 'line'
 
+declare-user-mode spacekak-mirror
+map global spacekak m ':enter-user-mode<space>-lock<space>mirror<ret>' -docstring 'mirror'
 
 declare-user-mode spacekak-easymotion
 map global spacekak e ':enter-user-mode<space>spacekak-easymotion<ret>' -docstring 'easymotion'

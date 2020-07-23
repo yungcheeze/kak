@@ -67,3 +67,7 @@ plug "occivink/kakoune-snippets" config %{
         }
     }
 }
+
+plug "delapouite/kakoune-mirror" config %{
+    map global mirror <space> 'a<space><esc>i<space><esc>H<a-;>'  -docstring '·surround·'
+}
