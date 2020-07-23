@@ -95,3 +95,7 @@ plug "andreyorst/tagbar.kak" defer "tagbar" %{
         # matching characters
     }
 }
+
+plug "dgmulf/local-kakrc.git" config %{
+    set-option global source_local_kakrc true
+}
