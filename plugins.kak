@@ -14,11 +14,7 @@ plug "ul/kak-lsp" do %{
     }
 }
 
-plug alexherbo2/auto-pairs.kak config %{
-  hook global WinCreate .* %{
-    auto-pairs-enable
-  }
-}
+plug "alexherbo2/auto-pairs.kak" commit "3e529e8002fe07e952c3a895f50dc749eb2b40de"
 
 plug "andreyorst/smarttab.kak" config %{
     hook global WinCreate .* %{ try %{
@@ -31,10 +27,6 @@ plug "andreyorst/smarttab.kak" config %{
         set-option window softtabstop 4
         set-option window indentwidth 4
     }
-}
-
-plug "alexherbo2/auto-pairs.kak" %{
-        hook global WinCreate .* auto-pairs-enable
 }
 
 plug "occivink/kakoune-vertical-selection"
