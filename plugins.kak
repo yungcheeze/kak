@@ -39,3 +39,5 @@ plug "danr/kakoune-easymotion" config %{
     set-option global em_jumpchars asdfghjkl
 }
 
+plug "greenfork/active-window.kak"
+
