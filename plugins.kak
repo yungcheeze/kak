@@ -42,3 +42,7 @@ plug "danr/kakoune-easymotion" config %{
 plug "greenfork/active-window.kak"
 
 plug "occivink/kakoune-phantom-selection"
+
+plug "alexherbo2/objectify.kak"
+
+plug "occivink/kakoune-find"
