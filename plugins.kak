@@ -46,3 +46,24 @@ plug "occivink/kakoune-phantom-selection"
 plug "alexherbo2/objectify.kak"
 
 plug "occivink/kakoune-find"
+
+plug "andreyorst/kakoune-snippet-collection"
+
+plug "occivink/kakoune-snippets" config %{
+    set-option -add global snippets_directories "%opt{plug_install_dir}/kakoune-snippet-collection/snippets"
+    set-option global snippets_auto_expand false
+    map global insert '<a-/>' '<a-;>: expand-or-jump<ret>'
+
+    define-command expand-or-jump %{
+        try %{
+            snippets-select-next-placeholders
+        } catch %{
+            snippets-expand-trigger %{
+                set-register / "%opt{snippets_triggers_regex}\z"
+                execute-keys 'hGhs<ret>'
+            }
+        } catch %{
+            nop
+        }
+    }
+}
