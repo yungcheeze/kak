@@ -98,6 +98,18 @@ declare-user-mode spacekak-toggles
 map global spacekak t ':enter-user-mode<space>spacekak-toggles<ret>' -docstring 'toggles'
 
 map global spacekak-toggles d ':git<space>show-diff<ret>' -docstring 'git diff'
+map global spacekak-toggles a ':auto-pairs-disable<ret>' -docstring 'disable autopairs'
+map global spacekak-toggles A ':auto-pairs-enable<ret>' -docstring 'enable autopairs'
+map global spacekak-toggles w ':autowrap-disable<ret>' -docstring 'disable autopairs'
+map global spacekak-toggles W ':autowrap-enable<ret>' -docstring 'enable autopairs'
+map global spacekak-toggles i ':tagbar-toggle-or-enable<ret>' -docstring 'imenu'
+define-command -hidden tagbar-toggle-or-enable %{
+    try %{
+        tagbar-toggle
+    } catch %{
+        tagbar-enable
+    }
+}
 
 declare-user-mode spacekak-comment
 map global spacekak c ':enter-user-mode<space>spacekak-comment<ret>' -docstring 'comment'
