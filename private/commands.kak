@@ -195,3 +195,25 @@ define-command -override flygrep-call-grep -params 1 %{ evaluate-commands %sh{
         printf "%s\n" "info -title flygrep %{$((3-${length:-0})) more chars}"
     fi
 }}
+
+define-command autocd -docstring %{
+ Command to change the directory to the
+ location of the currently opened file.
+ } %{
+     change-directory %sh{dirname "$kak_buffile"}
+ }
+
+define-command autocd-git-root -docstring %{
+ Command to change the directory to the
+ location of the currently opened file or the git root.
+ } %{
+     change-directory %sh{
+         cd "$(dirname "$kak_buffile")"
+         git rev-parse --show-toplevel || dirname "$kak_buffile"
+     }
+ }
+
+define-command autocd-prompt -docstring %{
+ Command to change the directory to the
+ location of the currently opened file.
+ } %{ execute-keys  ":change-directory %sh{dirname $kak_buffile}" }

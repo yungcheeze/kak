@@ -26,7 +26,6 @@ hook global BufWritePost .* %{ try %{
     git show-diff
 }}
 
-hook global BufCreate .*(zshenv|zprofile|zshrc|direnvrc|envrc|\benv) %{
-    set-option buffer filetype sh
+hook global FocusIn .* %{
+    autocd-git-root
 }
-
