@@ -53,9 +53,14 @@ map global spacekak <space> ':enter-user-mode<space>user<ret>'
 declare-user-mode spacekak-files
 map global spacekak f ':enter-user-mode<space>spacekak-files<ret>' -docstring 'files'
 
-map global spacekak-files s ':w<ret>' -docstring 'save file'
-map global spacekak-files f ':file<space>' -docstring 'find file'
-map global spacekak-files t ':set-option<space>current<space>filetype<space>' -docstring 'find file'
+map global spacekak-files s ':w<ret>' -docstring 'save'
+map global spacekak-files f ':file<space>' -docstring 'find'
+map global spacekak-files F ':file-all<space>' -docstring 'find (all)'
+map global spacekak-files e ':edit<space>' -docstring 'create/edit'
+map global spacekak-files t ':set-option<space>current<space>filetype<space>' -docstring 'change filetye'
+map global spacekak-files c ':autocd<ret>' -docstring 'change buffer to current directory'
+map global spacekak-files l ':repl lf<ret>' -docstring 'browse (lf)'
+map global spacekak-files b ':repl broot<ret>' -docstring 'browse (broot)'
 
 declare-user-mode spacekak-quit
 map global spacekak q ':enter-user-mode<space>spacekak-quit<ret>' -docstring 'quit'
