@@ -1,0 +1,3 @@
+- add parinfer
+- add fzf
+-easymotion-extend-region
