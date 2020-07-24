@@ -140,6 +140,30 @@ define-command kebabcase %{
   exec '<a-:><a-;>s_|[a-z][A-Z]<ret>;a<space><esc>s[_\s]+<ret>c-<esc><a-i>w`'
 }
 
+def -params 1 extend-line-down %{
+  exec "<a-:>%arg{1}X"
+}
+def -params 1 extend-line-up %{
+  exec "<a-:><a-;>%arg{1}K<a-;>"
+  try %{
+    exec -draft ';<a-K>\n<ret>'
+    exec X
+  }
+  exec '<a-;><a-X>'
+}
+
+define-command scratch %{
+  edit -scratch '*scratch*'
+}
+
+define-command scratch-reload %{
+  edit! -scratch '*scratch*'
+}
+
+define-command read-only %{
+  edit -readonly %val{bufname}
+}
+
 define-command git-write %{
   write
   git add
