@@ -139,3 +139,16 @@ define-command snakecase %{
 define-command kebabcase %{
   exec '<a-:><a-;>s_|[a-z][A-Z]<ret>;a<space><esc>s[_\s]+<ret>c-<esc><a-i>w`'
 }
+
+define-command git-write %{
+  write
+  git add
+}
+
+define-command git-commit %{
+  git commit
+}
+
+define-command git-amend %{
+  git commit --amend
+}

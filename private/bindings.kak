@@ -164,3 +164,24 @@ map global spacekak-phantom-sel a ':phantom-selection-select-all<ret>' -docstrin
 map global spacekak-phantom-sel d ':phantom-selection-clear<ret>' -docstring 'clear'
 map global spacekak-phantom-sel n ':phantom-selection-iterate-next<ret>' -docstring 'next'
 map global spacekak-phantom-sel p ':phantom-selection-iterate-prev<ret>' -docstring 'prev'
+
+
+declare-user-mode spacekak-git
+map global spacekak g ':enter-user-mode<space>spacekak-git<ret>' -docstring 'git'
+
+map global spacekak-git s ':git status<ret>' -docstring 'status'
+map global spacekak-git a ':git-write<ret>' -docstring 'add'
+map global spacekak-git T ':repl "tig --branches"<ret>' -docstring 'tig'
+map global spacekak-git L ':repl "lazygit"<ret>' -docstring 'lazygit'
+map global spacekak-git u ':git update-diff<ret>' -docstring 'update diff'
+
+
+declare-user-mode spacekak-git-commit
+map global spacekak-git c ':enter-user-mode<space>spacekak-git-commit<ret>' -docstring 'commit'
+map global spacekak-git-commit c ':git commit<ret>' -docstring 'commit'
+map global spacekak-git-commit a ':git commit --amend<ret>' -docstring 'amend'
+
+declare-user-mode spacekak-git-diff
+map global spacekak-git d ':enter-user-mode<space>spacekak-git-diff<ret>' -docstring 'diff'
+map global spacekak-git-diff d ':git diff<ret>' -docstring 'diff'
+map global spacekak-git-diff s ':git diff --staged<ret>' -docstring 'diff (staged)'
