@@ -114,6 +114,7 @@ declare-user-mode spacekak-comment
 map global spacekak c ':enter-user-mode<space>spacekak-comment<ret>' -docstring 'comment'
 
 map global spacekak-comment c ':comment-line<ret>' -docstring 'line'
+map global spacekak-comment l ':comment-line<ret>' -docstring 'line'
 map global spacekak-comment b ':comment-block<ret>' -docstring 'block'
 map global spacekak-comment y 'y:comment-line<ret>' -docstring 'line (and yank)'
 
