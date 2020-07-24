@@ -127,6 +127,18 @@ map global spacekak-insert o 'o<esc>k' -docstring 'line'
 declare-user-mode spacekak-mirror
 map global spacekak m ':enter-user-mode<space>-lock<space>mirror<ret>' -docstring 'mirror'
 
+declare-user-mode spacekak-text
+map global spacekak x ':enter-user-mode<space>spacekak-text<ret>' -docstring 'text'
+
+map global spacekak-text u '~' -docstring 'upcase'
+map global spacekak-text l '`' -docstring 'downcase'
+
+declare-user-mode spacekak-text-inflection
+map global spacekak-text i ':enter-user-mode<space>spacekak-text-inflection<ret>' -docstring 'inflection'
+map global spacekak-text-inflection k ':kebabcase<ret>' -docstring 'kebabcase'
+map global spacekak-text-inflection c ':camelcase<ret>' -docstring 'camelcase'
+map global spacekak-text-inflection s ':snakecase<ret>' -docstring 'snakecase'
+
 declare-user-mode spacekak-easymotion
 map global spacekak e ':enter-user-mode<space>spacekak-easymotion<ret>' -docstring 'easymotion'
 

@@ -105,3 +105,37 @@ hook global ModuleLoaded tmux %{
         tmux-terminal-window kak -c %val{session} -e "%arg{@}"
     }
 }
+
+define-command select-prev-subword %{
+  exec <a-/>[A-Z][a-z]+|[A-Z]+|[a-z]+<ret>
+}
+define-command select-next-subword %{
+  exec /[A-Z][a-z]+|[A-Z]+|[a-z]+<ret>
+}
+define-command extend-prev-subword %{
+  exec <a-?>[A-Z][a-z]+|[A-Z]+|[a-z]+<ret>
+}
+define-command extend-next-subword %{
+  exec ?[A-Z][a-z]+|[A-Z]+|[a-z]+<ret>
+}
+
+# foo_bar → fooBar
+# foo-bar → fooBar
+# foo bar → fooBar
+define-command camelcase %{
+  exec '`s[-_<space>]<ret>d~<a-i>w'
+}
+
+# fooBar → foo_bar
+# foo-bar → foo_bar
+# foo bar → foo_bar
+define-command snakecase %{
+  exec '<a-:><a-;>s-|[a-z][A-Z]<ret>;a<space><esc>s[-\s]+<ret>c_<esc><a-i>w`'
+}
+
+# fooBar → foo-bar
+# foo_bar → foo-bar
+# foo bar → foo-bar
+define-command kebabcase %{
+  exec '<a-:><a-;>s_|[a-z][A-Z]<ret>;a<space><esc>s[_\s]+<ret>c-<esc><a-i>w`'
+}
