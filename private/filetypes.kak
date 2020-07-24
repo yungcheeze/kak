@@ -1,4 +1,4 @@
-hook global BufCreate .*(zshenv|zprofile|zshrc|direnvrc|envrc|\benv) %{
+hook global BufCreate .*(zshenv|zprofile|zshrc|direnvrc|envrc|\benv|lfrc) %{
     set-option buffer filetype sh
 }
 
