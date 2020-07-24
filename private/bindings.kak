@@ -31,7 +31,6 @@ map global normal '<a-x>' ':'
 
 # temporarily unbind <c-n> and <c-p> for completions
 hook global InsertCompletionShow .* %{ try %{
-    execute-keys -draft 'h<a-K>\h<ret>'
     unmap global insert '<c-n>' '<down>'
     unmap global insert '<c-p>' '<up>'
 }}
