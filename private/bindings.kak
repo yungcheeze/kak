@@ -160,7 +160,7 @@ declare-user-mode spacekak-phantom-sel
 map global spacekak p ':enter-user-mode<space>spacekak-phantom-sel<ret>' -docstring 'phantom selections'
 
 map global spacekak-phantom-sel c ':phantom-selection-add-selection<ret>' -docstring 'add'
-map global spacekak-phantom-sel a ':phantom-selection-select-all<ret>' -docstring 'add'
+map global spacekak-phantom-sel a ':phantom-selection-select-all<ret>' -docstring 'activate all'
 map global spacekak-phantom-sel d ':phantom-selection-clear<ret>' -docstring 'clear'
 map global spacekak-phantom-sel n ':phantom-selection-iterate-next<ret>' -docstring 'next'
 map global spacekak-phantom-sel p ':phantom-selection-iterate-prev<ret>' -docstring 'prev'
