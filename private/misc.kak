@@ -29,3 +29,10 @@ hook global BufWritePost .* %{ try %{
 hook global FocusIn .* %{
     autocd-git-root
 }
+
+# delete COMMIT_EDITMSG buffers so they don't persist in sessions
+hook global ClientClose .* %{
+    try %{
+        delete-buffer! COMMIT_EDITMSG
+    }
+}
