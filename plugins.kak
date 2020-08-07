@@ -103,3 +103,5 @@ plug "dgmulf/local-kakrc.git" config %{
 plug "jbomanson/search-doc.kak" config %{
     require-module search-doc
 }
+
+plug "occivink/kakoune-sudo-write"
