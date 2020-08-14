@@ -35,4 +35,7 @@ hook global ClientClose .* %{
     try %{
         delete-buffer! COMMIT_EDITMSG
     }
+    try %{
+        delete-buffer! MERGE_MSG
+    }
 }
