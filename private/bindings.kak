@@ -47,7 +47,6 @@ map global normal '<a-*>' ':select-or-add-cursor<ret>'
 declare-user-mode spacekak
 map global normal <space> ':enter-user-mode<space>spacekak<ret>'
 
-map global spacekak <space> ':enter-user-mode<space>user<ret>'
 declare-user-mode spacekak-buffers
 map global spacekak b ':enter-user-mode<space>spacekak-buffers<ret>' -docstring 'buffers'
 
