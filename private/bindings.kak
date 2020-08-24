@@ -48,7 +48,6 @@ declare-user-mode spacekak
 map global normal <space> ':enter-user-mode<space>spacekak<ret>'
 
 map global spacekak <space> ':enter-user-mode<space>user<ret>'
-
 declare-user-mode spacekak-buffers
 map global spacekak b ':enter-user-mode<space>spacekak-buffers<ret>' -docstring 'buffers'
 
@@ -138,6 +137,21 @@ map global spacekak q ':enter-user-mode<space>spacekak-quit<ret>' -docstring 'qu
 map global spacekak-quit q ':quit<ret>' -docstring 'quit'
 map global spacekak-quit Q ':quit!<ret>' -docstring 'quit impolitely'
 map global spacekak-quit w ':write-quit!<ret>' -docstring 'quit and save'
+
+declare-user-mode spacekak-selection
+map global spacekak S ':enter-user-mode<space>spacekak-selection<ret>' -docstring 'selection'
+
+declare-user-mode spacekak-selection-clear
+map global spacekak-selection c ':enter-user-mode<space>spacekak-selection-clear<ret>' -docstring 'clear'
+map global spacekak-selection-clear c '<a-space>' -docstring 'current'
+map global spacekak-selection-clear o '<space>' -docstring 'rest'
+
+declare-user-mode surround
+map global spacekak s ':enter-user-mode surround<ret>'
+map global surround s ':surround<ret>' -docstring 'surround'
+map global surround c ':change-surround<ret>' -docstring 'change'
+map global surround d ':delete-surround<ret>' -docstring 'delete'
+map global surround t ':select-surrounding-tag<ret>' -docstring 'select tag'
 
 declare-user-mode spacekak-toggles
 map global spacekak t ':enter-user-mode<space>spacekak-toggles<ret>' -docstring 'toggles'
