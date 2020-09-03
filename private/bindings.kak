@@ -81,6 +81,7 @@ declare-user-mode spacekak-files
 map global spacekak f ':enter-user-mode<space>spacekak-files<ret>' -docstring 'files'
 
 map global spacekak-files s ':w<ret>' -docstring 'save'
+map global spacekak-files <a-s> ':sudo-write<ret>' -docstring 'save (sudo)'
 map global spacekak-files f ':file<space>' -docstring 'find'
 map global spacekak-files F ':file-all<space>' -docstring 'find (all)'
 map global spacekak-files e ':edit<space>' -docstring 'create/edit'
