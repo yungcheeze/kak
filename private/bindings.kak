@@ -25,10 +25,6 @@ map global insert '<c-y>'           '<esc>Pi'      -docstring "paste before the 
 map global normal '<c-v>' '<pagedown>'
 map global normal '<a-v>' '<pageup>'
 
-# still used to meta-x
-map global insert '<a-x>' ':'
-map global normal '<a-x>' ':'
-
 # temporarily unbind <c-n> and <c-p> for completions
 hook global InsertCompletionShow .* %{ try %{
     unmap global insert '<c-n>' '<down>'
