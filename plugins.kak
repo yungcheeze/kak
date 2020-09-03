@@ -72,7 +72,7 @@ plug "delapouite/kakoune-mirror" config %{
     map global mirror <space> 'a<space><esc>i<space><esc>H<a-;>'  -docstring '·surround·'
 }
 
-plug "h-youhei/kakoune-surround" config
+plug "h-youhei/kakoune-surround"
 
 plug "lePerdu/kakboard" config %{
     hook global WinCreate .* %{ kakboard-enable }
