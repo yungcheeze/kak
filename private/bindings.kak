@@ -172,6 +172,7 @@ map global spacekak w ':enter-user-mode<space>spacekak-windows<ret>' -docstring 
 
 map global spacekak-windows s ':split<ret>' -docstring 'split'
 map global spacekak-windows / ':vsplit<ret>' -docstring 'vsplit'
+map global spacekak-windows d ':quit!<ret>' -docstring 'close window' # todo close if only attached session
 
 declare-user-mode spacekak-text
 map global spacekak x ':enter-user-mode<space>spacekak-text<ret>' -docstring 'text'
