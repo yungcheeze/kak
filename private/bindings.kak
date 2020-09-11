@@ -132,7 +132,8 @@ map global spacekak q ':enter-user-mode<space>spacekak-quit<ret>' -docstring 'qu
 
 map global spacekak-quit q ':quit<ret>' -docstring 'quit'
 map global spacekak-quit Q ':quit!<ret>' -docstring 'quit impolitely'
-map global spacekak-quit w ':write-quit!<ret>' -docstring 'quit and save'
+map global spacekak-quit w ':write-quit!<ret>' -docstring 'quit and save (current-buffer)'
+map global spacekak-quit W ':write-all-quit<ret>' -docstring 'quit and save (all)'
 
 declare-user-mode spacekak-selection
 map global spacekak S ':enter-user-mode<space>spacekak-selection<ret>' -docstring 'selection'
