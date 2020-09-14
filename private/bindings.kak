@@ -186,16 +186,6 @@ map global spacekak-text-inflection k ':kebabcase<ret>' -docstring 'kebabcase'
 map global spacekak-text-inflection c ':camelcase<ret>' -docstring 'camelcase'
 map global spacekak-text-inflection s ':snakecase<ret>' -docstring 'snakecase'
 
-declare-user-mode spacekak-yank
-map global spacekak y ':enter-user-mode<space>spacekak-yank<ret>' -docstring 'yank'
-# System clipboard mappings
-map -docstring "copy to system clipboard"                   global spacekak-yank 'y' '<a-|>xsel -b -i<ret>:<space>echo -markup %{{Information}yanked selection to system clipboard}<ret>'
-map -docstring "cut to system clipboard"                    global spacekak-yank 'd' '|xsel -b -i<ret>'
-map -docstring "cut to system clipboard, enter insert mode" global spacekak-yank 'c' '|xsel -b -i<ret>i'
-map -docstring "paste from system clipboard before cursor"  global spacekak-yank 'P' '!xsel --output --clipboard<ret>'
-map -docstring "paste from system clipboard after cursor"   global spacekak-yank 'p' '<a-!>xsel --output --clipboard<ret>'
-map -docstring "replace selection with system clipboard"    global spacekak-yank 'R' '|xsel --output --clipboard<ret>'
-
 declare-user-mode spacekak-search
 map global spacekak '/' ':enter-user-mode<space>spacekak-search<ret>' -docstring 'search'
 
