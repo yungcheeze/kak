@@ -195,3 +195,9 @@ map -docstring "cut to system clipboard, enter insert mode" global spacekak-yank
 map -docstring "paste from system clipboard before cursor"  global spacekak-yank 'P' '!xsel --output --clipboard<ret>'
 map -docstring "paste from system clipboard after cursor"   global spacekak-yank 'p' '<a-!>xsel --output --clipboard<ret>'
 map -docstring "replace selection with system clipboard"    global spacekak-yank 'R' '|xsel --output --clipboard<ret>'
+
+declare-user-mode spacekak-search
+map global spacekak '/' ':enter-user-mode<space>spacekak-search<ret>' -docstring 'search'
+
+map global spacekak-search '/' ':flygrep<ret>' -docstring 'flygrep'
+map global spacekak-search 'a' ':find-apply-changes<space>-force<ret>' -docstring 'flygrep'
