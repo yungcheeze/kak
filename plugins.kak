@@ -37,6 +37,9 @@ plug "alexherbo2/split-object.kak" config %{
 
 plug "danr/kakoune-easymotion" config %{
     set-option global em_jumpchars asdfghjkl
+    face global EasyMotionBackground rgb:aaaaaa
+    face global EasyMotionForeground rgb:ad1f15+bf
+    face global EasyMotionSelected rgb:f5de14+bf
 }
 
 plug "greenfork/active-window.kak"
