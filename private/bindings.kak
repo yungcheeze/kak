@@ -48,9 +48,11 @@ map global spacekak b ':enter-user-mode<space>spacekak-buffers<ret>' -docstring 
 
 map global spacekak-buffers b ':buffer<space>' -docstring 'change'
 map global spacekak-buffers d ':delete-buffer<ret>' -docstring 'delete'
+map global spacekak-buffers D ':delete-buffer!<ret>' -docstring 'delete (force)'
+map global spacekak-buffers f ':format<ret>' -docstring 'format buffer'
 map global spacekak-buffers n ':buffer-next<ret>' -docstring 'next'
 map global spacekak-buffers p ':buffer-previous<ret>' -docstring 'previous'
-map global spacekak-buffers f ':format<ret>' -docstring 'format buffer'
+map global spacekak-buffers s ':scratch<ret>' -docstring 'scratch'
 
 declare-user-mode spacekak-comment
 map global spacekak c ':enter-user-mode<space>spacekak-comment<ret>' -docstring 'comment'
@@ -80,15 +82,21 @@ map global spacekak-easymotion /     ':easy-motion-on-regex<ret>' -docstring 're
 declare-user-mode spacekak-files
 map global spacekak f ':enter-user-mode<space>spacekak-files<ret>' -docstring 'files'
 
-map global spacekak-files s ':try %{write} catch %{sudo-write}<ret>' -docstring 'save'
-map global spacekak-files S ':write-all<ret>' -docstring 'save'
+map global spacekak-files b ':repl broot<ret>' -docstring 'browse (broot)'
+map global spacekak-files c ':enter-user-mode<space>spacekak-files-cd<ret>' -docstring 'change directory'
+map global spacekak-files e ':edit<space>' -docstring 'create/edit'
 map global spacekak-files f ':file<space>' -docstring 'find'
 map global spacekak-files F ':file-all<space>' -docstring 'find (all)'
-map global spacekak-files e ':edit<space>' -docstring 'create/edit'
 map global spacekak-files t ':set-option<space>current<space>filetype<space>' -docstring 'change filetye'
-map global spacekak-files c ':autocd<ret>' -docstring 'change buffer to current directory'
 map global spacekak-files l ':repl lf<ret>' -docstring 'browse (lf)'
-map global spacekak-files b ':repl broot<ret>' -docstring 'browse (broot)'
+map global spacekak-files s ':try %{write} catch %{sudo-write}<ret>' -docstring 'save'
+map global spacekak-files S ':write-all<ret>' -docstring 'save'
+map global spacekak-files r ':recentf ' -docstring 'save'
+
+declare-user-mode spacekak-files-cd
+map global spacekak-files-cd c ':autocd<ret>' -docstring 'current file'
+map global spacekak-files-cd C ':autocd-prompt<ret>' -docstring 'current file (prompt)'
+map global spacekak-files-cd g ':autocd-git-root<ret>' -docstring 'current git-root'
 
 declare-user-mode spacekak-git
 map global spacekak g ':enter-user-mode<space>spacekak-git<ret>' -docstring 'git'
@@ -112,8 +120,7 @@ map global spacekak-git-diff s ':git diff --staged<ret>' -docstring 'diff (stage
 declare-user-mode spacekak-insert
 map global spacekak i ':enter-user-mode<space>spacekak-insert<ret>' -docstring 'insert'
 
-map global spacekak-insert O 'O<esc>j' -docstring 'line'
-map global spacekak-insert o 'o<esc>k' -docstring 'line'
+# TODO insert symbol
 
 declare-user-mode spacekak-mirror
 map global spacekak m ':enter-user-mode<space>-lock<space>mirror<ret>' -docstring 'mirror'
@@ -136,15 +143,18 @@ map global spacekak-quit w ':write-quit!<ret>' -docstring 'quit and save (curren
 map global spacekak-quit W ':write-all-quit<ret>' -docstring 'quit and save (all)'
 
 declare-user-mode spacekak-selection
-map global spacekak S ':enter-user-mode<space>spacekak-selection<ret>' -docstring 'selection'
+map global spacekak s ':enter-user-mode<space>spacekak-selection<ret>' -docstring 'selection'
 
 declare-user-mode spacekak-selection-clear
 map global spacekak-selection c ':enter-user-mode<space>spacekak-selection-clear<ret>' -docstring 'clear'
 map global spacekak-selection-clear c '<a-space>' -docstring 'current'
 map global spacekak-selection-clear o '<space>' -docstring 'rest'
 
+map global spacekak-selection s ':enter-user-mode<space>split-object<ret>' -docstring 'split object'
+map global spacekak-selection "'" ':select-complement<ret>' -docstring 'complement'
+
 declare-user-mode surround
-map global spacekak s ':enter-user-mode surround<ret>'
+map global spacekak S ':enter-user-mode surround<ret>'
 map global surround s ':surround<ret>' -docstring 'surround'
 map global surround c ':change-surround<ret>' -docstring 'change'
 map global surround d ':delete-surround<ret>' -docstring 'delete'
@@ -156,8 +166,8 @@ map global spacekak t ':enter-user-mode<space>spacekak-toggles<ret>' -docstring 
 map global spacekak-toggles d ':git<space>show-diff<ret>' -docstring 'git diff'
 map global spacekak-toggles a ':auto-pairs-disable<ret>' -docstring 'disable autopairs'
 map global spacekak-toggles A ':auto-pairs-enable<ret>' -docstring 'enable autopairs'
-map global spacekak-toggles w ':autowrap-disable<ret>' -docstring 'disable autopairs'
-map global spacekak-toggles W ':autowrap-enable<ret>' -docstring 'enable autopairs'
+map global spacekak-toggles w ':autowrap-disable<ret>' -docstring 'disable autowrap'
+map global spacekak-toggles W ':autowrap-enable<ret>' -docstring 'enable autowrap'
 map global spacekak-toggles i ':tagbar-toggle-or-enable<ret>' -docstring 'imenu'
 define-command -hidden tagbar-toggle-or-enable %{
     try %{
@@ -190,4 +200,4 @@ declare-user-mode spacekak-search
 map global spacekak '/' ':enter-user-mode<space>spacekak-search<ret>' -docstring 'search'
 
 map global spacekak-search '/' ':flygrep<ret>' -docstring 'flygrep'
-map global spacekak-search 'a' ':find-apply-changes<space>-force<ret>' -docstring 'flygrep'
+map global spacekak-search 'a' ':find-apply-changes<space>-force<ret>' -docstring 'apply changes'
