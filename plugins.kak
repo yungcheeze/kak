@@ -112,3 +112,4 @@ plug "jbomanson/search-doc.kak" config %{
 }
 
 plug "occivink/kakoune-sudo-write"
+plug 'delapouite/kakoune-livedown'
