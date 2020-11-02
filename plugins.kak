@@ -7,12 +7,14 @@ plug "ul/kak-lsp" do %{
         cargo install --locked --force --path .
 } subset %{
 } config %{
-    eval %sh{kak-lsp --kakoune -s $kak_session}
+    eval %sh{~/.cargo/bin/kak-lsp --kakoune -s $kak_session}
     hook global WinSetOption filetype=(python|c|cpp|sh) %{
             lsp-enable-window
             map global spacekak <a-l> ':enter-user-mode<space>lsp<ret>'
     }
 }
+
+plug "alexherbo2/prelude.kak"
 
 plug "alexherbo2/auto-pairs.kak" commit "3e529e8002fe07e952c3a895f50dc749eb2b40de"
 
@@ -37,6 +39,9 @@ plug "alexherbo2/split-object.kak" config %{
 
 plug "danr/kakoune-easymotion" config %{
     set-option global em_jumpchars asdfghjkl
+    face global EasyMotionBackground rgb:aaaaaa
+    face global EasyMotionForeground rgb:ad1f15+bf
+    face global EasyMotionSelected rgb:f5de14+bf
 }
 
 plug "greenfork/active-window.kak"
@@ -72,6 +77,10 @@ plug "delapouite/kakoune-mirror" config %{
     map global mirror <space> 'a<space><esc>i<space><esc>H<a-;>'  -docstring '·surround·'
 }
 
+plug 'delapouite/kakoune-auto-percent'
+
+plug "h-youhei/kakoune-surround"
+
 plug "lePerdu/kakboard" config %{
     hook global WinCreate .* %{ kakboard-enable }
     hook global WinSetOption kakboard_enabled=true %{
@@ -103,3 +112,7 @@ plug "dgmulf/local-kakrc.git" config %{
 plug "jbomanson/search-doc.kak" config %{
     require-module search-doc
 }
+
+plug "occivink/kakoune-sudo-write"
+
+plug 'delapouite/kakoune-livedown'

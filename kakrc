@@ -8,3 +8,4 @@ source "%val{config}/private/misc.kak"
 
 colorscheme nord
 set-option global grepcmd 'rg --column --with-filename'
+set-option global autoreload yes
