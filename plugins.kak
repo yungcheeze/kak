@@ -14,6 +14,8 @@ plug "ul/kak-lsp" do %{
     }
 }
 
+plug "alexherbo2/prelude.kak"
+
 plug "alexherbo2/auto-pairs.kak" commit "3e529e8002fe07e952c3a895f50dc749eb2b40de"
 
 plug "andreyorst/smarttab.kak" config %{
@@ -112,4 +114,5 @@ plug "jbomanson/search-doc.kak" config %{
 }
 
 plug "occivink/kakoune-sudo-write"
+
 plug 'delapouite/kakoune-livedown'
