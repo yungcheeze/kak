@@ -1,3 +1,5 @@
+provide-module bindings %{
+
 # Avoid escape key
 map -docstring "avoid escape key" global normal '<c-g>' ';<space>'
 map -docstring "avoid escape key" global prompt '<c-g>' '<esc>'
@@ -168,14 +170,6 @@ map global spacekak-toggles a ':auto-pairs-disable<ret>' -docstring 'disable aut
 map global spacekak-toggles A ':auto-pairs-enable<ret>' -docstring 'enable autopairs'
 map global spacekak-toggles w ':autowrap-disable<ret>' -docstring 'disable autowrap'
 map global spacekak-toggles W ':autowrap-enable<ret>' -docstring 'enable autowrap'
-map global spacekak-toggles i ':tagbar-toggle-or-enable<ret>' -docstring 'imenu'
-define-command -hidden tagbar-toggle-or-enable %{
-    try %{
-        tagbar-toggle
-    } catch %{
-        tagbar-enable
-    }
-}
 
 declare-user-mode spacekak-windows
 map global spacekak w ':enter-user-mode<space>spacekak-windows<ret>' -docstring 'windows'
@@ -201,3 +195,5 @@ map global spacekak '/' ':enter-user-mode<space>spacekak-search<ret>' -docstring
 
 map global spacekak-search '/' ':flygrep<ret>' -docstring 'flygrep'
 map global spacekak-search 'a' ':find-apply-changes<space>-force<ret>' -docstring 'apply changes'
+
+}

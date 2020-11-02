@@ -1,3 +1,4 @@
+provide-module  commands %{
 
 define-command -docstring "Convert all leading spaces to tabs" \
 leading-spaces-to-tabs %{
@@ -217,3 +218,6 @@ define-command autocd-prompt -docstring %{
  Command to change the directory to the
  location of the currently opened file.
  } %{ execute-keys  ":change-directory %sh{dirname $kak_buffile}" }
+
+}
+

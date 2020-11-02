@@ -1,3 +1,5 @@
+provide-module formatters %{
+
 hook global WinSetOption filetype=json %{
     set-option window formatcmd 'prettier --parser=json'
 }
@@ -12,3 +14,7 @@ hook global WinSetOption filetype=markdown %{
 hook global BufCreate .*.txt %{
     set-option window formatcmd 'fmt --width=80'
 }
+
+}
+
+

@@ -9,6 +9,9 @@
 # │ GitHub.com/andreyorst/dotfiles │
 # ╰────────────────────────────────╯
 
+provide-module recentf %{
+
+
 hook global BufOpenFile .* recentf-add-file
 hook global BufWritePost .* recentf-add-file
 
@@ -59,3 +62,6 @@ $kak_opt_fzf_vertical_map: open file in vertical split"
 }}
 
 §
+
+}
+
