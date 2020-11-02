@@ -6,7 +6,7 @@ hook global WinSetOption filetype=python %{
 }
 
 hook global WinSetOption filetype=markdown %{
-    set-option window formatcmd 'fmt --width=80'
+    set-option window formatcmd 'prettier --parser=markdown --prose-wrap=always'
 }
 
 hook global BufCreate .*.txt %{
