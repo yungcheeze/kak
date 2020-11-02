@@ -1,3 +1,5 @@
+provide-module misc %{
+
 ## whitespace
 
 # show tabs, non-breakable spaces and whitespace
@@ -44,3 +46,6 @@ hook global ClientClose .* %{
         delete-buffer! MERGE_MSG
     }
 }
+
+}
+

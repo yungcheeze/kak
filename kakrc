@@ -1,11 +1,99 @@
-source "%val{config}/plugins.kak"
-source "%val{config}/private/commands.kak"
-source "%val{config}/private/recentf.kak"
-source "%val{config}/private/formatters.kak"
-source "%val{config}/private/filetypes.kak"
-source "%val{config}/private/bindings.kak"
-source "%val{config}/private/misc.kak"
+# Preamble
+require-module plug
 
-colorscheme nord
-set-option global grepcmd 'rg --column --with-filename'
-set-option global autoreload yes
+# Let plug.kak manage itself.
+plug plug https://github.com/alexherbo2/plug.kak %{
+  # Upgrade plugins
+  # Install plugins and build them.
+  define-command plug-upgrade -docstring 'plug-upgrade' %{
+    plug-install
+    plug-execute connect make install
+    plug-execute lsp cargo build --release
+  }
+}
+
+plug-core %{
+  colorscheme nord
+  set-option global grepcmd 'rg --column --with-filename --no-ignore-global --hidden'
+  set-option global autoreload yes
+}
+
+plug-autoload bindings
+plug-autoload commands
+plug-autoload filetypes
+plug-autoload formatters
+plug-autoload misc
+
+plug kakboard https://github.com/yungcheeze/kakboard %{
+    hook global WinCreate .* %{ kakboard-enable }
+    hook global WinSetOption kakboard_enabled=true %{
+        map global insert '<c-y>'           '<esc>:kakboard-with-pull-clipboard P<ret>i'      -docstring "paste before the cursor"
+    }
+    hook global WinSetOption kakboard_enabled=false %{
+        map global insert '<c-y>'           '<esc>Pi'      -docstring "paste before the cursor"
+    }
+}
+
+plug-old lsp https://github.com/kak-lsp/kak-lsp %{
+    lsp-enable
+}
+
+plug-old text-objects https://github.com/Delapouite/kakoune-text-objects
+
+plug prelude https://github.com/alexherbo2/prelude.kak
+
+plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
+  auto-pairs-enable
+}
+
+plug-old smarttab https://github.com/andreyorst/smarttab.kak %{
+    hook global WinCreate .* %{ try %{
+        expandtab
+        set-option window softtabstop 2
+        set-option window indentwidth 2
+    }}
+
+    hook global WinSetOption filetype=(python|kak) %{
+        set-option window softtabstop 4
+        set-option window indentwidth 4
+    }
+}
+
+plug split-object https://github.com/alexherbo2/split-object.kak %{
+    map -docstring "split object" global normal '<a-I>' ': enter-user-mode split-object<ret>'
+}
+
+plug-old easy-motion https://github.com/danr/kakoune-easymotion %{
+    set-option global em_jumpchars asdfghjkl
+    face global EasyMotionBackground rgb:aaaaaa
+    face global EasyMotionForeground rgb:ad1f15+bf
+    face global EasyMotionSelected rgb:f5de14+bf
+}
+
+plug-old active-window https://github.com/greenfork/active-window.kak.git
+
+plug-old phantom-selection https://github.com/occivink/kakoune-phantom-selection
+
+plug objectify https://github.com/alexherbo2/objectify.kak
+
+plug-old find https://github.com/occivink/kakoune-find
+
+#TODO alexherbo snippets.kak (seems promising)
+
+plug replace-mode https://github.com/alexherbo2/replace-mode.kak %{
+      map -docstring 'Replace' global user r ': enter-replace-mode<ret>'
+}
+
+plug-old mirror https://github.com/delapouite/kakoune-mirror %{
+    map global mirror <space> 'a<space><esc>i<space><esc>H<a-;>'  -docstring '·surround·'
+}
+
+plug-old auto-percent https://github.com/delapouite/kakoune-auto-percent
+
+plug-old surround https://github.com/h-youhei/kakoune-surround
+
+plug-old local-kakrc https://github.com/dgmulf/local-kakrc.git %{
+    set-option global source_local_kakrc true
+}
+
+plug-old sudo-write https://github.com/occivink/kakoune-sudo-write

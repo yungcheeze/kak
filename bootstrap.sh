@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-plug_kak_destination="$PWD/plugins/plug.kak"
+plugins_dir="$PWD/autoload/plugins"
+plug_kak_destination="$plugins_dir/plug.kak"
 [[ -e "$plug_kak_destination"  ]] && echo "plug.kak exists" && exit 0
 
-mkdir -p "$PWD/plugins"
-git clone https://github.com/andreyorst/plug.kak.git "$plug_kak_destination"
+mkdir -p "$plugins_dir"
+git clone https://github.com/alexherbo2/plug.kak.git "$plug_kak_destination"
