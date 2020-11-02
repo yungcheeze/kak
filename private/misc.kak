@@ -12,6 +12,11 @@ hook global WinDisplay .*              show-trailing-whitespaces
 hook global ModeChange 'insert:normal' show-trailing-whitespaces
 hook global ModeChange 'normal:insert' hide-trailing-whitespaces
 
+# Highlight TODO, FIXME, NOTE and XXX comments
+add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default+rb
+
+add-highlighter global/ show-matching
+
 # remove trailing whitespace on save
 hook global BufWritePre .* %{ try %{ execute-keys -draft \%s\h+$<ret>d } }
 
