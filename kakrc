@@ -36,6 +36,9 @@ plug kakboard https://github.com/yungcheeze/kakboard %{
 
 plug-old lsp https://github.com/kak-lsp/kak-lsp %{
     lsp-enable
+    hook global WinSetOption filetype=(python|c|cpp|sh) %{
+        map global spacekak <a-l> ':enter-user-mode<space>lsp<ret>'
+    }
 }
 
 plug-old text-objects https://github.com/Delapouite/kakoune-text-objects
