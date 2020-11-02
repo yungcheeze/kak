@@ -75,6 +75,8 @@ plug "delapouite/kakoune-mirror" config %{
     map global mirror <space> 'a<space><esc>i<space><esc>H<a-;>'  -docstring '·surround·'
 }
 
+plug 'delapouite/kakoune-auto-percent'
+
 plug "h-youhei/kakoune-surround"
 
 plug "lePerdu/kakboard" config %{
