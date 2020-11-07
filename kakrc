@@ -13,13 +13,28 @@ plug plug https://github.com/alexherbo2/plug.kak %{
 }
 
 plug-core %{
-  colorscheme nord
-  set-option global grepcmd 'rg --column --with-filename --no-ignore-global --hidden'
-  set-option global autoreload yes
+    colorscheme nord
+    set-option global grepcmd 'rg --column --with-filename --no-ignore-global --no-ignore --hidden'
+    set-option global autoreload yes
+
+    hook global ModuleLoaded tmux %{
+        define-command -docstring "vsplit [<commands>]: split tmux vertically" \
+        vsplit -params .. -command-completion %{
+            tmux-terminal-horizontal kak -c %val{session} -e "%arg{@}"
+        }
+        define-command -docstring "split [<commands>]: split tmux horizontally" \
+        split -params .. -command-completion %{
+            tmux-terminal-vertical kak -c %val{session} -e "%arg{@}"
+        }
+        define-command -docstring "tabnew [<commands>]: create new tmux window" \
+        tabnew -params .. -command-completion %{
+            tmux-terminal-window kak -c %val{session} -e "%arg{@}"
+        }
+    }
 }
 
-plug-autoload bindings
 plug-autoload commands
+plug-autoload bindings
 plug-autoload filetypes
 plug-autoload formatters
 plug-autoload misc
