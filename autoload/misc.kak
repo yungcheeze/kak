@@ -21,7 +21,8 @@ add-highlighter global/ show-matching
 
 # remove trailing whitespace on save
 hook global BufWritePre .* %{ try %{ execute-keys -draft \%s\h+$<ret>d } }
-
+define-command delete-trailing-whitespace-buffer %{  execute-keys -draft \%s\h+$<ret>d  }
+define-command delete-trailing-whitespace-selection %{  execute-keys -draft s\h+$<ret>d  }
 
 ## other highlighters
 # show git diff (git-gutter)
