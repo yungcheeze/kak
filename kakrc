@@ -14,7 +14,7 @@ plug plug https://github.com/alexherbo2/plug.kak %{
 
 plug-core %{
     colorscheme nord
-    set-option global grepcmd 'rg --column --with-filename --no-ignore-global --no-ignore --hidden'
+    set-option global grepcmd 'rg --column --with-filename'
     set-option global autoreload yes
 
     hook global ModuleLoaded tmux %{
@@ -31,6 +31,7 @@ plug-core %{
             tmux-terminal-window kak -c %val{session} -e "%arg{@}"
         }
     }
+
 }
 
 plug-autoload commands
@@ -50,8 +51,8 @@ plug kakboard https://github.com/yungcheeze/kakboard %{
 }
 
 plug-old lsp https://github.com/kak-lsp/kak-lsp %{
-    lsp-enable
-    hook global WinSetOption filetype=(python|c|cpp|sh) %{
+    hook global WinSetOption filetype=(python|c|cpp|sh|haskell) %{
+        lsp-enable-window
         map global spacekak <a-l> ':enter-user-mode<space>lsp<ret>'
     }
 }
@@ -115,3 +116,5 @@ plug-old local-kakrc https://github.com/dgmulf/local-kakrc.git %{
 }
 
 plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
+
+plug-old livedown https://github.com/Delapouite/kakoune-livedown.git
