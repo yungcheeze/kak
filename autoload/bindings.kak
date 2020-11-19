@@ -50,7 +50,7 @@ map global spacekak b ':enter-user-mode<space>spacekak-buffers<ret>' -docstring 
 
 map global spacekak-buffers b ':buffer<space>' -docstring 'change'
 map global spacekak-buffers d ':delete-buffer<ret>' -docstring 'delete'
-map global spacekak-buffers D ':delete-buffer!<ret>' -docstring 'delete (force)'
+map global spacekak-buffers <a-d> ':delete-buffer!<ret>' -docstring 'delete (force)'
 map global spacekak-buffers f ':format<ret>' -docstring 'format buffer'
 map global spacekak-buffers n ':buffer-next<ret>' -docstring 'next'
 map global spacekak-buffers p ':buffer-previous<ret>' -docstring 'previous'
@@ -88,16 +88,16 @@ map global spacekak-files b ':repl broot<ret>' -docstring 'browse (broot)'
 map global spacekak-files c ':enter-user-mode<space>spacekak-files-cd<ret>' -docstring 'change directory'
 map global spacekak-files e ':edit<space>' -docstring 'create/edit'
 map global spacekak-files f ':file<space>' -docstring 'find'
-map global spacekak-files F ':file-all<space>' -docstring 'find (all)'
+map global spacekak-files <a-f> ':file-all<space>' -docstring 'find (all)'
 map global spacekak-files t ':set-option<space>current<space>filetype<space>' -docstring 'change filetye'
 map global spacekak-files l ':repl lf<ret>' -docstring 'browse (lf)'
 map global spacekak-files s ':try %{write} catch %{sudo-write}<ret>' -docstring 'save'
-map global spacekak-files S ':write-all<ret>' -docstring 'save'
+map global spacekak-files <a-s> ':write-all<ret>' -docstring 'save'
 map global spacekak-files r ':recentf ' -docstring 'save'
 
 declare-user-mode spacekak-files-cd
 map global spacekak-files-cd c ':autocd<ret>' -docstring 'current file'
-map global spacekak-files-cd C ':autocd-prompt<ret>' -docstring 'current file (prompt)'
+map global spacekak-files-cd <a-c> ':autocd-prompt<ret>' -docstring 'current file (prompt)'
 map global spacekak-files-cd g ':autocd-git-root<ret>' -docstring 'current git-root'
 
 declare-user-mode spacekak-git
@@ -140,9 +140,9 @@ declare-user-mode spacekak-quit
 map global spacekak q ':enter-user-mode<space>spacekak-quit<ret>' -docstring 'quit'
 
 map global spacekak-quit q ':quit<ret>' -docstring 'quit'
-map global spacekak-quit Q ':quit!<ret>' -docstring 'quit impolitely'
+map global spacekak-quit <a-q> ':quit!<ret>' -docstring 'quit impolitely'
 map global spacekak-quit w ':write-quit!<ret>' -docstring 'quit and save (current-buffer)'
-map global spacekak-quit W ':write-all-quit<ret>' -docstring 'quit and save (all)'
+map global spacekak-quit <a-w> ':write-all-quit<ret>' -docstring 'quit and save (all)'
 
 declare-user-mode spacekak-selection
 map global spacekak s ':enter-user-mode<space>spacekak-selection<ret>' -docstring 'selection'
@@ -166,10 +166,10 @@ declare-user-mode spacekak-toggles
 map global spacekak t ':enter-user-mode<space>spacekak-toggles<ret>' -docstring 'toggles'
 
 map global spacekak-toggles d ':git<space>show-diff<ret>' -docstring 'git diff'
-map global spacekak-toggles a ':auto-pairs-disable<ret>' -docstring 'disable autopairs'
-map global spacekak-toggles A ':auto-pairs-enable<ret>' -docstring 'enable autopairs'
-map global spacekak-toggles w ':autowrap-disable<ret>' -docstring 'disable autowrap'
-map global spacekak-toggles W ':autowrap-enable<ret>' -docstring 'enable autowrap'
+map global spacekak-toggles <a-a> ':auto-pairs-disable<ret>' -docstring 'disable autopairs'
+map global spacekak-toggles a ':auto-pairs-enable<ret>' -docstring 'enable autopairs'
+map global spacekak-toggles <a-w> ':autowrap-disable<ret>' -docstring 'disable autowrap'
+map global spacekak-toggles w ':autowrap-enable<ret>' -docstring 'enable autowrap'
 
 declare-user-mode spacekak-windows
 map global spacekak w ':enter-user-mode<space>spacekak-windows<ret>' -docstring 'windows'
