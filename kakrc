@@ -53,7 +53,7 @@ plug kakboard https://github.com/yungcheeze/kakboard %{
 plug-old lsp https://github.com/kak-lsp/kak-lsp %{
     hook global WinSetOption filetype=(python|c|cpp|sh|haskell) %{
         lsp-enable-window
-        map global spacekak <a-l> ':enter-user-mode<space>lsp<ret>'
+        map global spacekak l ':enter-user-mode<space>lsp<ret>' -docstring "lsp"
     }
 }
 
