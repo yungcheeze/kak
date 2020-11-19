@@ -180,18 +180,29 @@ define-command git-amend %{
 
 define-command -override -docstring "flygrep: run grep on every key" \
 flygrep %{
+    flygrep--with-opts '--hidden'
+}
+
+define-command -override -docstring "flygrep: run grep on every key (no ignored files)" \
+flygrep-all %{
+    flygrep--with-opts '--hidden --no-ignore --no-ignore-global'
+}
+
+define-command -override \
+flygrep--with-opts -params 1 %{
     edit -scratch *grep*
     prompt "flygrep: " -on-change %{
-        flygrep-call-grep %val{text}
+        flygrep--call-grep %val{text} %arg{1}
     } nop
 }
 
-define-command -override flygrep-call-grep -params 1 %{ evaluate-commands %sh{
+define-command -override -hidden flygrep--call-grep -params 2 %{ evaluate-commands %sh{
     length=$(printf "%s" "$1" | wc -m)
     [ -z "${1##*&*}" ] && text=$(printf "%s\n" "$1" | sed "s/&/&&/g") || text="$1"
+    grep_opts="$2"
     if [ ${length:-0} -gt 2 ]; then
         printf "%s\n" "info"
-        printf "%s\n" "evaluate-commands %&grep '$text'&"
+        printf "%s\n" "evaluate-commands %&grep $grep_opts '$text'&"
     else
         printf "%s\n" "info -title flygrep %{$((3-${length:-0})) more chars}"
     fi

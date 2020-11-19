@@ -194,6 +194,7 @@ declare-user-mode spacekak-search
 map global spacekak '/' ':enter-user-mode<space>spacekak-search<ret>' -docstring 'search'
 
 map global spacekak-search '/' ':flygrep<ret>' -docstring 'flygrep'
+map global spacekak-search '<a-/>' ':flygrep-all<ret>' -docstring 'flygrep (all)'
 map global spacekak-search 'a' ':find-apply-changes<space>-force<ret>' -docstring 'apply changes'
 
 }
