@@ -8,7 +8,7 @@ plug plug https://github.com/alexherbo2/plug.kak %{
   define-command plug-upgrade -docstring 'plug-upgrade' %{
     plug-install
     plug-execute connect make install
-    plug-execute lsp cargo build --release
+    # plug-execute lsp cargo build --release
   }
 }
 
