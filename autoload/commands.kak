@@ -85,7 +85,7 @@ file-all -shell-script-candidates %{
 
 define-command -override -docstring "file <path> [<line>]: Fuzzy search and open file. If <line> argument is specified jump to the <line> after opening" \
 file -shell-script-candidates %{
-    [ -n "$(command -v fd)" ] && fd . -L --type f || find . -follow -type f
+    [ -n "$(command -v fd)" ] && fd . -L --hidden --exclude ".git" --type f || find . -follow -type f
 } -params 1..2 %{ evaluate-commands %sh{
     file=$(printf "%s\n" "$1" | sed "s/&/&&/g")
     printf "%s\n" "edit -existing -- %&${file}&"
