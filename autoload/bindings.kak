@@ -185,6 +185,8 @@ map global spacekak-toggles <a-a> ':auto-pairs-disable<ret>' -docstring 'disable
 map global spacekak-toggles a ':auto-pairs-enable<ret>' -docstring 'enable autopairs'
 map global spacekak-toggles <a-w> ':autowrap-disable<ret>' -docstring 'disable autowrap'
 map global spacekak-toggles w ':autowrap-enable<ret>' -docstring 'enable autowrap'
+map global spacekak-toggles W ':add-highlighter window/ wrap -indent -marker ↪<ret>' -docstring 'enable line wrap'
+map global spacekak-toggles <a-W> ':remove-highlighter window/wrap_-indent_-marker_↪<ret>' -docstring 'disable line wrap'
 declare-user-mode crosshairs
 map global spacekak-toggles c ':enter-user-mode<space>crosshairs<ret>' -docstring 'crosshairs'
 map global crosshairs c ':crosshairs<ret>' -docstring 'line and column'
