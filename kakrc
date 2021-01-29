@@ -63,6 +63,9 @@ plug prelude https://github.com/alexherbo2/prelude.kak
 
 plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
   auto-pairs-enable
+    hook global WinSetOption filetype=(kak|html) %{
+        set-option -add window auto_pairs < >
+    }
 }
 
 plug-old smarttab https://github.com/andreyorst/smarttab.kak %{
