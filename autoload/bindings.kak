@@ -23,10 +23,6 @@ map global insert '<c-w>'           '<esc>c'      -docstring "delete selection"
 map global insert '<a-backspace>' '<esc>bc'      -docstring "delete until the previous word boundary"
 map global insert '<c-y>'           '<esc>Pi'      -docstring "paste before the cursor"
 
-# emacs page scrolling
-map global normal '<c-v>' '<pagedown>'
-map global normal '<a-v>' '<pageup>'
-
 # temporarily unbind <c-n> and <c-p> for completions
 hook global InsertCompletionShow .* %{ try %{
     unmap global insert '<c-n>' '<down>'
