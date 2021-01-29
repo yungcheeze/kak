@@ -185,6 +185,11 @@ map global spacekak-toggles <a-a> ':auto-pairs-disable<ret>' -docstring 'disable
 map global spacekak-toggles a ':auto-pairs-enable<ret>' -docstring 'enable autopairs'
 map global spacekak-toggles <a-w> ':autowrap-disable<ret>' -docstring 'disable autowrap'
 map global spacekak-toggles w ':autowrap-enable<ret>' -docstring 'enable autowrap'
+declare-user-mode crosshairs
+map global spacekak-toggles c ':enter-user-mode<space>crosshairs<ret>' -docstring 'crosshairs'
+map global crosshairs c ':crosshairs<ret>' -docstring 'line and column'
+map global crosshairs x ':cursorline<ret>' -docstring 'line'
+map global crosshairs y ':cursorcolumn<ret>' -docstring 'column'
 
 declare-user-mode spacekak-windows
 map global spacekak w ':enter-user-mode<space>spacekak-windows<ret>' -docstring 'windows'
