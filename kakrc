@@ -120,3 +120,6 @@ plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 plug-old livedown https://github.com/Delapouite/kakoune-livedown.git
 
 plug-old extra-filetypes https://github.com/kakoune-editor/kakoune-extra-filetypes
+plug-old kak-tree https://github.com/ul/kak-tree %{
+    set-option global tree_cmd 'kak-tree -vvv'
+}

@@ -120,6 +120,25 @@ map global spacekak i ':enter-user-mode<space>spacekak-insert<ret>' -docstring '
 
 # TODO insert symbol
 
+map global spacekak 'k' ':enter-user-mode<space>-lock<space>tree<ret>' -docstring 'tree'
+declare-user-mode tree
+map global tree p ': tree-select-previous-node<ret>' -docstring 'select previous'
+map global tree n ': tree-select-next-node<ret>' -docstring 'select next'
+map global tree u ': tree-select-parent-node<ret>' -docstring 'select parent'
+map global tree d ': tree-select-children<ret>' -docstring 'select children'
+map global tree k ': tree-select-first-child<ret>' -docstring 'select first child'
+map global tree f ': tree-select-first-child<ret>' -docstring 'select first child'
+
+map global spacekak '<a-k>' ':enter-user-mode<space>tree-kind<ret>' -docstring 'tree'
+declare-user-mode tree-kind
+map global tree-kind p ': tree-select-previous-node<space>' -docstring 'select previous'
+map global tree-kind n ': tree-select-next-node<space>' -docstring 'select next'
+map global tree-kind u ': tree-select-parent-node<space>' -docstring 'select parent'
+map global tree-kind d ': tree-select-children<space>' -docstring 'select children'
+map global tree-kind k ': tree-select-first-child<space>' -docstring 'select first child'
+map global tree-kind f ': tree-select-first-child<space>' -docstring 'select first child'
+map global tree-kind s ': tree-node-sexp<ret>' -docstring 'show info'
+
 declare-user-mode spacekak-mirror
 map global spacekak m ':enter-user-mode<space>-lock<space>mirror<ret>' -docstring 'mirror'
 
