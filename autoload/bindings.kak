@@ -169,6 +169,7 @@ map global spacekak-selection-clear o '<space>' -docstring 'rest'
 
 map global spacekak-selection s ':enter-user-mode<space>split-object<ret>' -docstring 'split object'
 map global spacekak-selection "'" ':select-complement<ret>' -docstring 'complement'
+map global spacekak-selection f ':format-selections<ret>' -docstring 'format'
 
 declare-user-mode surround
 map global spacekak S ':enter-user-mode surround<ret>'
