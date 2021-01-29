@@ -118,3 +118,5 @@ plug-old local-kakrc https://github.com/dgmulf/local-kakrc.git %{
 plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 
 plug-old livedown https://github.com/Delapouite/kakoune-livedown.git
+
+plug-old extra-filetypes https://github.com/kakoune-editor/kakoune-extra-filetypes
