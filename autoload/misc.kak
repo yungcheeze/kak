@@ -34,7 +34,7 @@ hook global BufWritePost .* %{ try %{
     git show-diff
 }}
 
-hook global FocusIn .* %{
+hook global  KakBegin .* %{
     autocd-git-root
 }
 
