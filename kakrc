@@ -85,13 +85,6 @@ plug split-object https://github.com/alexherbo2/split-object.kak %{
     map -docstring "split object" global normal '<a-I>' ': enter-user-mode split-object<ret>'
 }
 
-plug-old easy-motion https://github.com/danr/kakoune-easymotion %{
-    set-option global em_jumpchars asdfghjkl
-    face global EasyMotionBackground rgb:aaaaaa
-    face global EasyMotionForeground rgb:ad1f15+bf
-    face global EasyMotionSelected rgb:f5de14+bf
-}
-
 plug-old active-window https://github.com/greenfork/active-window.kak.git
 
 plug-old phantom-selection https://github.com/occivink/kakoune-phantom-selection

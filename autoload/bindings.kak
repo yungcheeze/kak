@@ -60,23 +60,6 @@ map global spacekak-comment l ':comment-line<ret>' -docstring 'line'
 map global spacekak-comment b ':comment-block<ret>' -docstring 'block'
 map global spacekak-comment y 'y:comment-line<ret>' -docstring 'line (and yank)'
 
-declare-user-mode spacekak-easymotion
-map global spacekak e ':enter-user-mode<space>spacekak-easymotion<ret>' -docstring 'easymotion'
-
-map global spacekak-easymotion e     ':easy-motion-char<ret>'     -docstring 'char ->'
-# map global spacekak-easymotion E     'Z:easy-motion-char<ret><a-z>u'     -docstring 'char ->'
-map global spacekak-easymotion c     ':easy-motion-char<ret>'     -docstring 'char ->'
-map global spacekak-easymotion w     ':easy-motion-w<ret>'        -docstring 'word ->'
-map global spacekak-easymotion <a-w> ':easy-motion-W<ret>'        -docstring 'WORD ->'
-map global spacekak-easymotion j     ':easy-motion-j<ret>'        -docstring 'line <-'
-map global spacekak-easymotion k     ':easy-motion-k<ret>'        -docstring 'line ->'
-map global spacekak-easymotion f     ':easy-motion-f<ret>'        -docstring 'char ->'
-map global spacekak-easymotion <a-f> ':easy-motion-alt-f<ret>'    -docstring 'char <-'
-map global spacekak-easymotion b     ':easy-motion-b<ret>'        -docstring 'word <-'
-map global spacekak-easymotion <a-b> ':easy-motion-B<ret>'        -docstring 'WORD <-'
-map global spacekak-easymotion s     ':easy-motion-on-regex<ret>' -docstring 'regex'
-map global spacekak-easymotion /     ':easy-motion-on-regex<ret>' -docstring 'regex'
-
 declare-user-mode spacekak-files
 map global spacekak f ':enter-user-mode<space>spacekak-files<ret>' -docstring 'files'
 
