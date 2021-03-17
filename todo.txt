@@ -1,3 +1,6 @@
 - add parinfer
 - add fzf
 -easymotion-extend-region
+- flygrep singlefile
+- add kak-gdb (https://github.com/occivink/kakoune-gdb)
+- rip kak-tree bindings (https://github.com/vbauerster/dotfiles/blob/master/config/kak/plugins.kak)
