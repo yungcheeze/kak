@@ -128,3 +128,5 @@ plug parinfer https://github.com/eraserhd/parinfer-rust %{
 }
 
 plug-old kak-crosshairs https://github.com/insipx/kak-crosshairs
+
+plug-old kakoune-toggle-map https://github.com/krornus/kakoune-toggle-map
