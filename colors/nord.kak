@@ -55,7 +55,7 @@ evaluate-commands %sh{
         face global LineNumbers        ${nord3},${nord0}
         face global LineNumberCursor   ${nord10},${nord1}
         face global LineNumbersWrapped ${nord10},${nord1}
-        face global MenuForeground     ${nord4},${nord1}+b
+        face global MenuForeground     ${nord4},${nord2}+b
         face global MenuBackground     ${nord4},${nord1}
         face global MenuInfo           ${nord1}
         face global Information        ${nord4},${nord1}
