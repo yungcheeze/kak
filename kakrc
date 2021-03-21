@@ -41,6 +41,8 @@ plug-autoload formatters
 plug-autoload misc
 
 plug kakboard https://github.com/yungcheeze/kakboard %{
+    set-option global kakboard_copy_cmd 'clip.exe'
+    set-option global kakboard_paste_cmd 'powershell.exe -noprofile -command Get-Clipboard | tr -d "\r" | perl -pe "chomp if eof"'
     hook global WinCreate .* %{ kakboard-enable }
     hook global WinSetOption kakboard_enabled=true %{
         map global insert '<c-y>'           '<esc>:kakboard-with-pull-clipboard P<ret>i'      -docstring "paste before the cursor"
