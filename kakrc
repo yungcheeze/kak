@@ -12,6 +12,7 @@ plug plug https://github.com/alexherbo2/plug.kak %{
   }
 }
 
+
 plug-core %{
     colorscheme nord
     set-option global grepcmd 'rg --column --with-filename'
@@ -43,12 +44,13 @@ plug-autoload misc
 plug kakboard https://github.com/yungcheeze/kakboard %{
     set-option global kakboard_copy_cmd 'clip.exe'
     set-option global kakboard_paste_cmd 'powershell.exe -noprofile -command Get-Clipboard | tr -d "\r" | perl -pe "chomp if eof"'
+    set-option global kakboard_paste_keys
     hook global WinCreate .* %{ kakboard-enable }
     hook global WinSetOption kakboard_enabled=true %{
-        map global insert '<c-y>'           '<esc>:kakboard-with-pull-clipboard P<ret>i'      -docstring "paste before the cursor"
+        map global user p ':kakboard-pull-clipboard<ret>' -docstring 'Pull clipboard'
     }
     hook global WinSetOption kakboard_enabled=false %{
-        map global insert '<c-y>'           '<esc>Pi'      -docstring "paste before the cursor"
+        unmap global user p
     }
 }
 
