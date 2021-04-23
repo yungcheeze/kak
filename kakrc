@@ -43,7 +43,7 @@ plug-autoload formatters
 plug-autoload misc
 
 plug kakboard https://github.com/yungcheeze/kakboard %{
-    hook global WinCreate .* %{ kakboard-enable }
+    # hook global WinCreate .* %{ kakboard-enable }
     hook global WinSetOption kakboard_enabled=true %{
         map global insert '<c-y>'           '<esc>:kakboard-with-pull-clipboard P<ret>i'      -docstring "paste before the cursor"
     }
