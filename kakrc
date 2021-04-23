@@ -16,6 +16,7 @@ plug-core %{
     colorscheme nord
     set-option global grepcmd 'rg --column --with-filename'
     set-option global autoreload yes
+    plug-autoload commands
 
     hook global ModuleLoaded tmux %{
         define-command -docstring "vsplit [<commands>]: split tmux vertically" \
@@ -34,7 +35,8 @@ plug-core %{
 
 }
 
-plug-autoload commands
+
+
 plug-autoload bindings
 plug-autoload filetypes
 plug-autoload formatters
