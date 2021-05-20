@@ -60,6 +60,9 @@ map global spacekak-comment l ':comment-line<ret>' -docstring 'line'
 map global spacekak-comment b ':comment-block<ret>' -docstring 'block'
 map global spacekak-comment y 'y:comment-line<ret>' -docstring 'line (and yank)'
 
+map global spacekak e ':enter-user-mode<space>easymotion<ret>' -docstring 'easymotion'
+map global easymotion e ':easy-motion-char<ret>' -docstring 'char'
+
 declare-user-mode spacekak-files
 map global spacekak f ':enter-user-mode<space>spacekak-files<ret>' -docstring 'files'
 

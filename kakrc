@@ -135,3 +135,9 @@ plug-old kakoune-toggle-map https://github.com/krornus/kakoune-toggle-map
 
 plug-old ansi https://github.com/eraserhd/kak-ansi
 
+plug-old easymotion https://github.com/danr/kakoune-easymotion %{
+    set-option global em_jumpchars asdfghjkl
+    face global EasyMotionBackground rgb:aaaaaa
+    face global EasyMotionForeground rgb:ad1f15+bf
+    face global EasyMotionSelected rgb:f5de14+bf
+}
